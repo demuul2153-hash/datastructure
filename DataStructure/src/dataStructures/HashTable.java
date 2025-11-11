@@ -11,7 +11,7 @@ public class HashTable
    {
       // data members
       protected Object key;
-      protected Object element;
+      public Object element;
 
       // constructors
       private HashEntry() {}
@@ -50,7 +50,7 @@ public class HashTable
      * @return location of matching element if found, otherwise return
      * location where an element with key theKey may be inserted
      * provided the hash table is not full */
-   private int search(Object theKey)
+   protected int search(Object theKey)
    {
       int i = Math.abs(theKey.hashCode()) % divisor;  // home bucket
       int j = i;    // start at home bucket

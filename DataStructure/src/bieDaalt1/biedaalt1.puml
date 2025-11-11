@@ -1,0 +1,199 @@
+@startuml
+
+class MainProgram [[java:bieDaalt1.MainProgram]] {
+
+	+{static} main(args: String[]): void
+
+}
+
+class Major [[java:bieDaalt1.Major]] {
+
+	-code: String
+
+	-name: String
+
+	+Major()
+
+	+Major(code: String, name: String)
+
+	+setCode(code: String): void
+
+	+setName(name: String): void
+
+	+getCode(): String
+
+	+getName(): String
+
+	+print(): void
+
+	+toString(): String
+
+}
+
+class Registration [[java:bieDaalt1.Registration]] {
+
+	-studentList: ArrayLinearList
+
+	-subjectList: ArrayLinearList
+
+	-majorList: ArrayLinearList
+
+	-file: ArrayLinearList
+
+	+Registration()
+
+	+Registration(studentList: ArrayLinearList, subjectList: ArrayLinearList, majorList: ArrayLinearList)
+
+	+setStudentList(studentList: ArrayLinearList): void
+
+	+setSubjectList(subjectList: ArrayLinearList): void
+
+	+setMajorList(majorList: ArrayLinearList): void
+
+	+getStudentList(): ArrayLinearList
+
+	+getSubjectList(): ArrayLinearList
+
+	+getMajorList(): ArrayLinearList
+
+	-makeSubjectList(): void
+
+	-makeMajorList(): void
+
+	-makeStudentList(): void
+
+	-fileRead(file: File): void
+
+	+subjectList(): void
+
+	+majorList(): void
+
+	+avgGPA(): void
+
+	+studentsHasFallen(): void
+
+	+printAsSubject(): void
+
+	+printAsMajor(): void
+
+}
+
+class Student [[java:bieDaalt1.Student]] {
+
+	-name: String
+
+	-code: String
+
+	-GPA: float
+
+	-lessons: Chain
+
+	+Student()
+
+	+Student(code: String, lessons: Chain)
+
+	+setName(name: String): void
+
+	+setCode(code: String): void
+
+	+calculateGPA(): void
+
+	+addLesson(score: int, subs: ArrayLinearList, code: String): void
+
+	+isFallen(): boolean
+
+	+print(): void
+
+	+getName(): String
+
+	+getCode(): String
+
+	+getGPA(): float
+
+	+getLessons(): String
+
+	+getMajor(majorList: ArrayLinearList): String
+
+}
+
+class Subject [[java:bieDaalt1.Subject]] {
+
+	-code: String
+
+	-name: String
+
+	-credit: float
+
+	+Subject(code: String, name: String, credit: float)
+
+	+Subject(subs: ArrayLinearList, code: String)
+
+	+Subject()
+
+	+setCode(code: String): void
+
+	+setName(name: String): void
+
+	+setCredit(credit: float): void
+
+	+getCode(): String
+
+	+getName(): String
+
+	+getCredit(): float
+
+	-subjectAsCode(subs: ArrayLinearList): void
+
+	+print(): void
+
+	+toString(): String
+
+}
+
+class Test [[java:bieDaalt1.Test]] {
+
+	-subjectList: ArrayLinearList
+
+	-file: ArrayLinearList
+
+	-makeSubjectList(): void
+
+	-fileRead(file: File): void
+
+	+{static} main(args: String[]): void
+
+}
+
+class Lessons [[java:bieDaalt1.Lessons]] {
+
+	-score: int
+
+	+Lessons()
+
+	+Lessons(learned: Subject, score: int)
+
+	+setLearned(learned: Subject): void
+
+	+setScore(score: int): void
+
+	+getScore(): int
+
+}
+
+file "Гадаад файлууд"{
+    
+}
+
+class Subject {
+
+}
+
+Lessons --> "1" Subject : learned
+
+class Subject {
+
+}
+
+Lessons --> "1" Subject : getLearned()
+
+@enduml
