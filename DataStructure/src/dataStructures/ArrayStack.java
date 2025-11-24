@@ -9,8 +9,8 @@ import utilities.*;
 public class ArrayStack implements Stack
 {
    // data members
-   int top;          // current top of stack
-   Object [] stack;  // element array
+   protected int top;          // current top of stack
+   protected Object [] stack;  // element array
 
    // constructors
    /** create a stack with the given initial capacity
